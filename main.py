@@ -104,8 +104,6 @@ class Dino:
     def draw(self, SCREEN):
         SCREEN.blit(self.image, (self.dino_rect.x, self.dino_rect.y))
 
-
-
 class Cloud:
     def __init__(self):
         self.x = SCREEN_WIDTH + random.randint(800,1000)
@@ -261,6 +259,7 @@ def menu(death_count):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+                exit()
             if event.type == pygame.KEYDOWN:
                 main()
 
