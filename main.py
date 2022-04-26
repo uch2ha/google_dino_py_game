@@ -2,6 +2,7 @@ import pygame
 import os
 import random
 from Dino import Dino
+from Cloud import Cloud
 
 pygame.init()
 
@@ -24,27 +25,11 @@ Bird = [pygame.image.load("Assets\Bird\Bird1.png"),
         pygame.image.load("Assets\Bird\Bird2.png")]
 
 #Others:
-CLOUD = pygame.image.load("Assets\Others\Cloud.png")
+
 BG = pygame.image.load("Assets\Others\Track.png")
 
 
 
-
-class Cloud:
-    def __init__(self):
-        self.x = SCREEN_WIDTH + random.randint(800,1000)
-        self.y = random.randint(50,100)
-        self.image = CLOUD
-        self.width = self.image.get_width()
-
-    def update(self):
-        self.x -= game_speed
-        if self.x < -self.width:
-            self.x = SCREEN_WIDTH + random.randint(2500,3000)
-            self.y =  random.randint(50,100)
-
-    def draw(self, SCREEN):
-        SCREEN.blit(self.image, (self.x, self.y))
 
 def main():
     global game_speed, x_pos_bg, y_pos_bg
@@ -55,6 +40,7 @@ def main():
     game_speed = 14
     x_pos_bg = 0
     x_pos_bg = 380
+
 
     
 
