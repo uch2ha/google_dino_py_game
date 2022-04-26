@@ -32,14 +32,14 @@ BG = pygame.image.load("Assets\Others\Track.png")
 
 
 def main():
-    global game_speed, x_pos_bg, y_pos_bg
+    # global game_speed, x_pos_bg, y_pos_bg
     run = True
     clock = pygame.time.Clock()
     player = Dino()
-    cloud = Cloud()
     game_speed = 14
+    cloud = Cloud(game_speed, SCREEN_WIDTH)
     x_pos_bg = 0
-    x_pos_bg = 380
+    y_pos_bg = 380
 
 
     

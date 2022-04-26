@@ -1,20 +1,22 @@
 import pygame
-from main import SCREEN_WIDTH, game_speed
+# from main import game_speed
 import random
 
 CLOUD = pygame.image.load("Assets\Others\Cloud.png")
 
 class Cloud:
-    def __init__(self):
-        self.x = SCREEN_WIDTH + random.randint(800,1000)
+    def __init__(self, game_speed, SCREEN_WIDTH):
         self.y = random.randint(50,100)
         self.image = CLOUD
         self.width = self.image.get_width()
+        self.SCREEN_WIDTH = SCREEN_WIDTH
+        self.game_speed = game_speed
+        self.x = self.SCREEN_WIDTH + random.randint(800,1000) 
 
     def update(self):
-        self.x -= game_speed
+        self.x -= self.game_speed
         if self.x < -self.width:
-            self.x = SCREEN_WIDTH + random.randint(2500,3000)
+            self.x = self.SCREEN_WIDTH + random.randint(2500,3000)
             self.y =  random.randint(50,100)
 
     def draw(self, SCREEN):
