@@ -1,8 +1,8 @@
 import pygame
-import os
 import random
 from Dino import Dino
 from Cloud import Cloud
+from sys import exit
 
 game_speed = {"speed": 14}
 
